@@ -57,3 +57,22 @@ plt.xlabel("Time (s)")
 plt.ylabel("Temperature (°C)")
 plt.title("Sensor Readings from Sample 41 to 80")
 plt.show()
+
+#Task 6.4
+df = pd.read_csv("env_temp_humidity_clean.csv",parse_dates=["timestamp"])
+df.isna().sum() #checks empty values
+df.describe() 
+print(df.head(5))
+
+plt.plot(df["timestamp"], df["temperature_C"])
+plt.xlabel("Time (date,hour)")
+plt.ylabel("Temperature")
+plt.title("Temperature vs Time")
+plt.show()
+
+plt.plot(df["timestamp"], df["humidity_pct"])
+plt.xlabel("Time (date,hour)")
+plt.ylabel("Humidity")
+plt.title("Humidity vs Time")
+plt.show()
+
